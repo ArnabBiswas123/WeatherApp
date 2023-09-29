@@ -1,13 +1,215 @@
-body {
+/* :root{
+  --section-overlay:rgba(0,0,0,0.7);
+  --background-overlay:rgba(0,0,0,0.2)
+}
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app{
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
 }
+
+.overlay{
+  width: 100vh;
+  height: 100vh;
+  background-color: var(--background-overlay);
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.container{
+  max-width: 800px;
+  margin: auto;
+  height: 100%;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.section{
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  color: white;
+}
+
+.section__inputs, .section__temperature{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--section-overlay);
+}
+
+.section__inputs>input{
+  border: 0.8px solid white;
+  border-radius: 0.4rem;
+  background-color: transparent;
+  color:white;
+  padding: 0.5rem;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.section__inputs>input:focus{
+  outline: none;
+}
+
+.section__inputs>button{
+  padding: 10px 50px;
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.section__inputs>button:hover{
+  cursor: pointer;
+  background-color: lightgray;
+}
+
+.icon{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon>h3{
+  font-size: 15px;
+  font-weight: 200;
+  text-transform: capitalize;
+}
+.temparature>h1{
+  font-size: 60px;
+} */
+
+
+:root {
+  --section-overlay: rgba(0, 0, 0, 0.7);
+  --background-overlay: rgba(0, 0, 0, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh; /* Changed to min-height for smaller content */
+  background-position: center;
+  background-size: cover;
+}
+
+.overlay {
+  width: 100%;
+  min-height: 100vh; /* Changed to min-height for smaller content */
+  background-color: var(--background-overlay);
+  display: flex;
+  align-items: center; /* Vertically center content */
+}
+
+.container {
+  max-width: 800px;
+  width: 100%; /* Take up full width */
+  margin: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* Center text */
+}
+
+.section {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  color: white;
+  margin-bottom: 1rem; /* Add spacing between sections */
+}
+
+.section__inputs,
+.section__temperature {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center;
+  background-color: var(--section-overlay);
+  padding: 1rem;
+}
+
+.section__inputs>input,
+.section__inputs>button {
+  width: 100%; /* Make input and button full width */
+  margin: 0.5rem 0; /* Add spacing between input and button */
+}
+
+.section__inputs>input {
+  border: 0.8px solid white;
+  border-radius: 0.4rem;
+  background-color: transparent;
+  color: white;
+  padding: 0.5rem;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.section__inputs>input:focus {
+  outline: none;
+}
+
+.section__inputs>button {
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: lightgray;
+  transition: background-color 0.3s ease; /* Add hover transition */
+}
+
+.section__inputs>button:hover {
+  background-color: gray;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem; /* Add spacing between icon and temperature */
+}
+
+.icon>h3 {
+  font-size: 15px;
+  font-weight: 200;
+  text-transform: capitalize;
+}
+
+.temperature>h1 {
+  font-size: 60px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    padding: 0.5rem; /* Adjust container padding for smaller screens */
+  }
+
+  .section__inputs>input,
+  .section__inputs>button {
+    font-size: 16px; /* Decrease font size for smaller screens */
+  }
+}
+
